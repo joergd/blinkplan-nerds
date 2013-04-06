@@ -9,8 +9,8 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title %> :: Blinkplan Nerd Blog</title>
     
-    <%= stylesheet_link_tag "normalize", "foundation", "all" %>
-    <%= javascript_include_tag  "all" %>
+    <%= stylesheet_link_tag "normalize", "foundation", "all", "github" %>
+    <%= javascript_include_tag  "all", "rainbow" %>
   </head>
   
   <body class="<%= page_classes %>">
@@ -43,7 +43,7 @@
       <aside class="large-3 columns">
 
         <a href="http://www.blinkplan.com" title="magazine flatplan pagination tool"><%= image_tag "logo.png" %></a><br/>
-        <h6 class="subheader">Blinkplan is an online tool to create flatplans - or pagination - for magazines. The design has has been informed by a deep appreciation for simplicty - and for making you badass.</h6><br/>
+        <h6 class="subheader"><%= link_to "Blinkplan is an online tool to create flatplans - or pagination - for magazines", "http://www.blinkplan.com", :title => "magazine flatplan pagination tool" %>. The design has has been informed by a deep appreciation for simplicty - and for making you badass.</h6><br/>
         <h5>Recent Articles</h5>
         <ul class="side-nav">
           <% blog.articles[0...10].each do |article| %>
@@ -83,5 +83,6 @@
       ga('send', 'pageview');
 
     </script>
+
   </body>
 </html>
